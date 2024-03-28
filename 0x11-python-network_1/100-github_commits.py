@@ -14,5 +14,5 @@ if __name__ == "__main__":
     req = requests.get(url)
     for i in range(len(req.json())):
         data1 = req.json()[i].get("sha")
-        commit = req.json()[i].get("commit").get("committer").get("name")
+        commit = req.json()[i].get("commit").get("author").get("name")
         print("{}: {}".format(data1, commit))
