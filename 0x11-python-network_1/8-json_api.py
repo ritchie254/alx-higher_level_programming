@@ -7,27 +7,14 @@ import sys
 import requests
 import json
 
-
-def searchLetter(letter):
-    """
-    Python script that takes in a letter and sends a POST request
-    """
-    if not letter:
-        letter = ""
-    req = requests.post("http://0.0.0.0:5000/search_user", data={"q": letter})
+if __name__ == "__main__":
+    data = {"q": sys.argv[1] if len(sys.argv) > 1 else ""}
+    req = requests.post("http://0.0.0.0:5000/search_user", data=data)
     try:
-        data = req.json()
-        if data:
-            print("[{}] {}".format(data.get("id"), data.get("name")))
+        json_file = req.json()
+        if json_file:
+            print("[{}] {}".format(json_file.get("id"), json_file.get("name")))
         else:
             print("No result")
-    except ValueError:
+    except Exception as e:
         print("Not a valid JSON")
-
-
-if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        letter = sys.argv[1]
-    else:
-        letter = ""
-    searchLetter(letter)
