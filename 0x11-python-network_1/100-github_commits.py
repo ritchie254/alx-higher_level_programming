@@ -10,7 +10,7 @@ if __name__ == "__main__":
     repo = sys.argv[1]
     owner = sys.argv[2]
     url = "https://api.github.com/repos/"
-    url += owner + '/' + repo + '/commits'
+    url += owner + '/' + repo + '/commits?per_page=10'
     req = requests.get(url)
     for i in range(len(req.json())):
         data1 = req.json()[i].get("sha")
