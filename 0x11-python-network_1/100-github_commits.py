@@ -12,7 +12,7 @@ if __name__ == "__main__":
     url = "https://api.github.com/repos/"
     url += owner + '/' + repo + '/commits'
     req = requests.get(url)
-    for commit in req.json():
-        data1 = commit.get("sha")
-        commit = commit.get("commit").get("author").get("name")
+    for i in range(len(req.json())):
+        data1 = req.json()[i].get("sha")
+        commit = req.json()[i].get("commit").get("author").get("name")
         print("{}: {}".format(data1, commit))
