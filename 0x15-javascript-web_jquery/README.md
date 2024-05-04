@@ -14,7 +14,7 @@
 * [JQuery Ajax Tutorial #1 - Using AJAX & API’s](https://m.youtube.com/watch?v=fEYx8dQr_cQ)
 * What went wrong? Troubleshooting JavaScript
 * JQuery
-* (JQuery API](https://api.jquery.com/)
+* [JQuery API](https://api.jquery.com/)
 * JQuery Ajax
 
 ## Learning Objectives
